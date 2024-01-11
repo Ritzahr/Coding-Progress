@@ -1,0 +1,86 @@
+// Examples of the code I worked through today
+
+//Designed a function that checks if a password provided satisfies three conditions: has the character 'n', the character 'c' and ends with the character '1', case in-sensitive. 
+//Version 1
+function passwordValidation(password) {
+const hasN = /[Nn]/.test(password);        
+    const hasC = /[Cc]/.test(password);         
+    const endsWith1 = password[password.length - 1]   
+
+    if (hasN && hasC && endsWith1 === '1') {
+        return 'valid';
+    } else {
+        return 'invalid';
+    }
+}
+//Version 2
+let includesC = false;
+    let includesN = false;
+    const endsWith1 = password[password.length - 1] === '1';
+    for(let i = 0; i < password.length; i++){
+        if (password[i] === 'c' || password[i] === 'C') {
+            includesC = true;
+        }
+        if (password[i] === 'n' || password[i] === 'N') {
+            includesN = true;
+        }
+    }
+    if (includesC && includesN && endsWith1) {
+        return 'valid';
+    } else {
+        return 'invalid';
+    }
+
+//Wrote a function which takes a string and returns the string in camelCase
+function convertToCamelCase(string) {
+const words = string.toLowerCase().split(' ');
+const empty = [];
+
+for (let i = 1; i < words.length; i++) {
+  empty.push(words[i][0].toUpperCase() + words[i].slice(1))
+}
+
+return words[0] + empty.join('');
+}
+
+//Wrote a function that hyphenates every word
+function hyphenateWords(string) {
+  const stringArr = string.split('');
+  for (let i = 0; i < stringArr.length; i++){
+    if (stringArr[i] === ' ') {
+      stringArr.splice(i, 1, '-');
+    }
+  }
+ console.log(stringArr.join(''))
+ return stringArr.join('');
+ 
+}
+
+//Wrote a function that takes a string and returns the last word
+function getLastWord(string) {
+  return string.split(' ').at(-1)
+}
+
+//Wrote a function that takes a string and returns the middle character for an odd-length string, or the two middle characters for an even-length string.
+//Version 1
+function getMiddle(string) {
+console.log(string)
+if (string.length % 2 === 0) {
+  return string[string.length / 2 - 1] + string[string.length / 2]
+} else if (string.length % 2 !== 0) {
+  return string[Math.floor(string.length / 2)]
+}
+}
+
+//Version 2
+   const length = string.length;
+    const middleIndex = Math.floor(length / 2);
+    return length % 2 === 0 ? string.slice(middleIndex - 1, middleIndex + 1) : string[middleIndex];
+}
+
+//Wrote a function that takes a string in capital letters and returns the string with just the first letter being capitalised.
+function dontShoutSentence(string) {
+    const firstLetter = string[0];
+    const lowercaseLetters = string.slice(1).toLowerCase();
+    return firstLetter + lowercaseLetters;
+}
