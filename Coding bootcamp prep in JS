@@ -84,3 +84,6 @@ function dontShoutSentence(string) {
     const lowercaseLetters = string.slice(1).toLowerCase();
     return firstLetter + lowercaseLetters;
 }
+
+Also spent some of this time learning about Git and GitHub, whilst downloading and installing WSL 2 to start working with Ubuntu. 
+Today was a good day. 
