@@ -1,2 +1,57 @@
 Spent 90 minutes learning about GitHub, Git and the Linux CLI today. 
 Also jumped on a few basic JS challenges related to the bootcamp. 
+
+
+Some basic code I wrote today:
+function getItemsLongerThan(items, len) {
+  return items.filter((x) => x.length > len)
+}
+
+function getEvenNumbers(nums) {
+return nums.filter((x) => x % 2 === 0)
+}
+
+function getEvenNumbers(nums) {
+    const evenNums = [];
+    for(let i = 0; i < nums.length; i++){
+        if (nums[i] % 2 === 0) {
+            evenNums.push(nums[i]);
+        }
+    }
+    return evenNums;
+}
+
+function alphabetPosition(text) {
+  const alphabet = ["a","A","b","B","c","C","d","D","e","E","f","F","g","G","h","H","i","I","j","J","k","K","l","L","m","M","n","N","o","O","p","P","q","Q","r","R","s","S","t","T","u","U","v","V","w","W","x","X","y","Y","z","Z"]
+  const stringArr = text.split("");
+  let index = [];
+  
+  for (let i = 0; i < stringArr.length; i++){ 
+    for(let x = 0; x < alphabet.length; x++) {
+   if (stringArr[i] === alphabet[x]) {
+     const truePosition = x + 1
+     index.push(Math.round(truePosition / 2));
+     
+   }}  }
+  return index.join(" ");
+}
+
+function powersOfTwo(n){
+  const result = [];
+  
+  for (let i = 0; i <= n; i++) {
+    result.push(Math.pow(2,i))
+  }
+  return result;
+}
+
+function printerError(s) {
+  let errorCounter = 0; 
+  
+  for (let i = 0; i < s.length; i++){ 
+  if (s[i] > "m") {
+    errorCounter++
+  }
+  }
+  return errorCounter + "/" + s.length;
+}
