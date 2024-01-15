@@ -1,0 +1,16 @@
+//Study time: 50 minutes.//
+//Learned: Git commands - how to create a repo, clone a repo, check it's status and use Git to make changes to repos on GitHub.//
+
+// Coding: Worked through an array challenge, wrote the following//
+function getLastItems(items, n) {
+const result = [];
+
+if (n < 1) {
+  return result;
+}
+
+for (let i = items.length - n; i < items.length; i++){
+  result.push(items[i]);
+}
+return result; 
+}
