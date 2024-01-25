@@ -1,0 +1,41 @@
+//Coding Time: 45 minutes.//
+//Refreshed knowledge through doing challenges on the NorthCoders platform. //
+//Code Written: //
+
+function removeItem(items, n) {
+console.log(items,n);
+let result = [];
+if (n > items.length) {
+  return items
+}
+  for (let i = 0; i < items.length; i++) {
+    if (i === n) {
+      result = items.toSpliced(i, 1)
+    }
+  }
+return result; 
+}
+
+Personally refactored version: 
+function removeItem(items, n) {
+if (n > items.length) {
+  return items
+} else {return items.toSpliced(n, 1)}
+
+}
+
+function getSandwichFilling(sandwich) {
+  let result = []; 
+  console.log(sandwich)
+  const index = sandwich.length - 1; 
+  if (sandwich.length < 2) {return result
+  } else {return sandwich.slice(1, index)} 
+}
+
+ if (n >= 0 && n < items.length) {
+    return items.slice(0, n).concat(items.slice(n + 1));
+  } else {
+
+    return items;
+  }
+}
