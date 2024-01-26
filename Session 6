@@ -1,0 +1,50 @@
+//Study Time: 78 minutes.
+//Worked on some challenges from NorthCoders and revised some previous materials. 
+//Code I've written today: 
+
+
+function isItemOmnipresent(arrayOfArrays, item) {
+let counter = 0;
+
+for (let i = 0; i < arrayOfArrays.length; i++) {
+  const first = arrayOfArrays[i];
+  for (let x = 0; x < first.length; x++) {
+    if (first[x] === item) {
+      counter++
+    }
+  }
+}
+
+if (counter >= 3) {
+  return true
+} else {return false}
+}
+
+function isItemOmnipresent(arrayOfArrays, item) {
+let counter = 0;
+
+for (let i = 0; i < arrayOfArrays.length; i++) {
+  const first = arrayOfArrays[i];
+  for (let x = 0; x < first.length; x++) {
+    if (first[x] === item) {
+      counter++
+    }
+  }
+}
+if (counter >= 3) {
+  return true
+} else {return false}
+}
+***REFACTORED***
+function isItemOmnipresent(arrayOfArrays, item) {
+for (const array of arrayOfArrays) {
+  if (!array.includes(item)) {return false}
+}
+return true
+}
+
+
+function flattenArrayByOne(arrayOfArrays) {
+return [].concat(...arrayOfArrays)
+}
+ 
