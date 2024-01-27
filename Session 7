@@ -1,0 +1,43 @@
+//Study Time: 91 minutes
+//Finished up on some of the basic challenges from Northcoders, today's subject was mainly on objects. 
+//Examples of code I've written today(Note: some of the challenges were quite basic): 
+
+function getNorthcodersNames(northcoders) {
+const array = []
+
+for (let i = 0; i < northcoders.length; i++) {
+  const arrObj = northcoders[i]
+   array.push(arrObj.name)}
+
+console.log(array)
+return array
+}
+
+
+function deleteManyPasswords(users) {
+   users.forEach((user) => {
+  delete user.password
+})
+
+return users;
+}
+
+function countTheObjects(array) {
+let counter = 0;
+
+for (let i=0; i < array.length; i++) {
+  if (!Array.isArray(array[i]))
+  if (array[i] !== null)
+  if (typeof array[i] !== 'string')
+  if (typeof array[i] !== 'number')
+  counter++
+}
+console.log(array, counter)
+return counter;
+}
+
+function countTheObjects(array) {
+  const object = array.filter((object)=> typeof object === 'object' && Array.isArray(object) === false && object !== null);
+  return object.length
+}
+
