@@ -1,0 +1,54 @@
+// Study Time: 93 minutes.
+// Started taking the Advanced Challenges from Northcoders, ended up getting stuck on the first one, but managed to pull through and finish 5. 
+//Examples of code I've written today: 
+
+function translateKey(student, keyToChange, translation) {
+const newObj = {};
+
+for (const x in student) {
+  newObj[x] = student[x]
+  newObj[translation] = student[keyToChange]
+  delete newObj[keyToChange]}
+
+return newObj;
+}
+
+
+function findFirstDentist(people) {
+  for (let i = 0; i < people.length; i++) {
+    const person = people[i];
+    if (person.isDentist === true) {
+      return person; 
+    }
+  }
+  return null; 
+}
+
+function tallyPeopleInManchester(people) {
+const count = people.filter((person)=> person.lives.city === 'Manchester')
+console.log(people);
+return count.length; 
+}
+
+function getPugOwners(dogs) {
+const pugOwners = [];
+
+for (let i= 0; i<dogs.length; i++){
+if (dogs[i].breed === 'Pug') {
+  pugOwners.push(dogs[i].owner)
+}
+}
+
+return pugOwners;
+}
+
+
+
+function getPugOwners(dogs) {
+let pugOwners = [];
+
+dogs.forEach((x)=> x.breed === 'Pug' ? pugOwners.push(x.owner) : pugOwners = [] )
+
+return pugOwners;
+}
+
