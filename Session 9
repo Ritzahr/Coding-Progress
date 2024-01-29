@@ -1,0 +1,87 @@
+//Study Time: 94 minutes.
+//Completed 4 challenges today, but this time took the approach of reactoring my own code and trying out different methods on the same challenge. 
+//Examples of the code I've written today: 
+
+function pluraliseKeys(obj) {
+const result = {};
+
+for (const key in obj) {
+  
+  if (Array.isArray(obj[key])) { 
+    result[`${key}s`] = obj[key]
+  } else {result[key] = obj[key]}
+}
+return result; 
+}
+
+function getWordLengths(string) {
+const result = []; 
+
+if (string.length > 0) {
+  const words = string.split(' ');
+  for (let i =0; i < words.length; i++){
+    result.push(words[i].length)
+  }
+}
+
+return result;
+}
+
+function getWordLengths(string) {
+if (string === '') {
+  return []
+}
+
+const lengths = [];
+const words = string.split(' ');
+for (let i = 0; i < words.length; i++) {
+  lengths.push(words[i].length)
+}
+return lengths; 
+}
+
+function getWordLengths(string) {
+if (!string.length) return [];
+const words = string.split(' ');
+return words.map((word) => word.length);
+}
+
+function getPalindromes(words) {
+const palindromes = []
+
+for (let i = 0; i < words.length; i++) {
+const theWord = words[i];
+const reversedWord = theWord.split('').reverse().join(''); 
+if (reversedWord === theWord) {palindromes.push(reversedWord)}
+}
+
+return palindromes
+}
+
+function getPalindromes(words) {
+return words.filter((word)=> word.split('').reverse().join('') === word)
+}
+
+function replaceLettersWithXs(string) {
+const characters = string.split('');
+const alphabet = /[a-zA-Z]/;
+
+for(let i = 0; i < characters.length; i++) {
+  if (alphabet.test(characters[i])) {
+    characters.splice(i, 1, 'X')
+   
+  }
+} return characters.join('')
+}
+
+function replaceLettersWithXs(string) {
+
+  const characters = string.split('');
+  const alphabet = /[a-zA-Z]/;
+
+  const rework = characters.map(char => alphabet.test(char) ? 'X' : char);
+
+  return rework.join('');
+}
+
+
