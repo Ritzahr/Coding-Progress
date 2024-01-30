@@ -1,0 +1,40 @@
+//Study Time: 87 minutes
+//Completed some more challenges
+//Examples of the code I wrote: 
+function validMobileNumber(mobileNumber) {
+let digits = '';
+
+if (mobileNumber.startsWith('07')) {
+  digits += mobileNumber.slice(2)
+} else if (mobileNumber.startsWith('+447')) {
+  digits += mobileNumber.slice(4)
+} else if (mobileNumber.startsWith('00447')) {
+  digits += mobileNumber.slice(5)
+} else {return false
+}
+return digits.length === 9 && !isNaN(digits)
+}
+
+function validMobileNumber(mobileNumber) {
+const regEx = /^(07|\+447|00447)\d{9}$/
+return regEx.test(mobileNumber);
+}
+
+function sumDigitsFromString(string) {
+const numbers = string.split('');
+let sum = 0; 
+console.log(string)
+if (!isNaN(string) && string.length > 1) {
+  for (let i = 0; i<numbers.length; i++) {
+    sum += Number(numbers[i]); }
+} else if (!isNaN(string) && string.length <= 1) {
+  return Number(string)
+} else {
+  const onlyNums = numbers.filter((item)=>!isNaN(item))
+  for (let i = 0; i<onlyNums.length; i++) {
+    sum += Number(onlyNums[i])}
+  }
+console.log(sum)
+return sum; 
+}
+
