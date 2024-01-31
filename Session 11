@@ -1,0 +1,60 @@
+//Study Time: 91 minutes.
+//Continued with challenges, touched upon recursion. 
+//Examples of code, I've written today: 
+
+function sumDigitsFromString(string) {
+const array = string.split('');
+return array.reduce((total, current)=>{
+  const currentNumber = Number(current);
+  if (!isNaN(currentNumber)) {
+    total+= currentNumber;
+  } 
+  return total; 
+ }, 0)
+}
+
+function getWilliams(names) {
+const newArr = names.join(' ').split(' ');
+let correctNames = [];
+
+for (let i = 1; i < newArr.length; i+=2){ 
+  const surname = newArr[i];
+  if (surname === "Williams") {
+    correctNames.push(newArr[i -1] +' '+ surname);
+  }
+}
+console.log(correctNames)
+return correctNames; 
+}
+
+
+function getWilliams(names) {
+const regex = /\bWilliams\b/
+return names.filter((name) => regex.test(name))
+}
+
+function getWilliams(names) {
+const williams = [];
+for (let i = 0; i < names.length; i++) {
+  if (names[i].endsWith('Williams')) {
+    williams.push(names[i]);
+  }
+}
+return williams; 
+}
+
+
+function getFactorials(nums) {
+    const factorials = nums.map((num) => {
+        let result = 1;
+        for (let i = num; i > 1; i--) {
+            result *= i;
+        }
+        return result;
+    });
+
+    return factorials;
+}
+
+
+
