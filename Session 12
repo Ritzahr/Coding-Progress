@@ -1,0 +1,20 @@
+//Study Time: 62
+//Studied recursion today and completed one new challenge.
+//Examples of the code I've written: 
+
+function getFactorials(nums) {
+ 
+ const factorials = (num) => {
+    if (num <= 1) {return 1};
+    return num * factorials(num - 1)
+  }
+
+return nums.map((num)=> factorials(num))
+}
+
+function findLargestNumber(number) {
+const numArr = number.toString().split('')
+const sortedArr = numArr.sort((a,b) => b - a)
+return Number(sortedArr.join(''))
+}
+
