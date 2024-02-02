@@ -1,0 +1,19 @@
+//Study Time: 56 minutes.
+//Short session today, managed to finish one of the challenges. 
+//Examples of code I wrote today: 
+
+
+function generateMatrix(number) {
+return Array.from({length: number}, () => Array(number).fill(null))
+}
+
+function generateMatrix(number) {
+const matrix =[];
+for (let i = 0; i < number; i++) {
+  const row = Array.from({length: number}, () => null);
+  matrix.push(row)
+}
+console.log(matrix);
+return matrix;
+}
+
