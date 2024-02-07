@@ -1,0 +1,51 @@
+//Study Time: 45 minutes
+//Finished the advanced challenges and did some debugging and refactoring work on NorthCoder's platform. Basic challenges.
+//Examples of code I wrote today: 
+
+function findWrongWayFruit(orchard) {
+  if (orchard.length < 3) return 0;
+  if (orchard[0] === orchard[1]) {
+    for (let i = 2; i < orchard.length; i++) {
+      if (orchard[i] !== orchard[0]) {
+        return i
+      }
+    }
+  } else if (orchard[0] === orchard[2]) {
+    return 1
+  }
+  return 0; 
+}
+
+
+function matchDnaPairs(dnaString) {
+console.log(dnaString)
+const regex = /[GCTA]/i;
+const pairs = []
+if (dnaString.length < 1) return pairs;
+
+const dnaArray = dnaString.toUpperCase().split('');
+const filtered = dnaArray.filter((char) => regex.test(char))
+for (let i = 0; i < filtered.length; i++) {
+  if (filtered[i] === 'G') pairs.push('GC')
+  if (filtered[i] === 'C') pairs.push('CG')
+  if (filtered[i] === 'T') pairs.push('TA')
+  if (filtered[i] === 'A') pairs.push('AT')
+}
+
+return pairs
+}
+
+function tallyHashtagsAndMentions(str) {
+const obj = {
+  hashtags: 0,
+  mentions: 0
+};
+const array = str.split('');
+
+for(let i = 0; i < array.length; i++) {
+  if (array[i] === '@') obj.mentions++;
+  if (array[i] === '#') obj.hashtags++}
+
+return obj;
+}
+
