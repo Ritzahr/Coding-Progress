@@ -1,0 +1,27 @@
+//Study Time: 44 minutes:
+//Spent time learning about HTML from FreeCodeCamp and touching up on Regular Expressions on NorthCoder's platform. 
+//Examples of code, I wrote: 
+
+
+<!DOCTYPE HTML>
+<html> 
+<head>
+  <h1 style = 'color:red; background:black'><b>ROCK, PAPER, SCISSORS!!!</b></h1>
+</head>
+  <body>
+    <pre>
+<h3> Welcome challenger, every 1000 years we host our ancient game of Rock, Paper, Scissors! 
+            Winner takes all, but the losers...
+
+  
+            Do you <em>dare</em> challenge our champion?</h3>
+                                 <a><button style = 'color: white; background: green'>YES</button></a> <a><button style = 'color: white; background: red'>NO</button></a>
+      
+    </pre>
+
+  
+
+    
+  </body>
+
+</html>
