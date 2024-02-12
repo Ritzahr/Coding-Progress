@@ -1,0 +1,96 @@
+//Study Time: 113 minutes. 
+//Covered Regular Expression Challenges on Northcoders and HTML tutorials. 
+//Examples of the code I wrote today: 
+
+function isValidSortCode(str) {
+  const regEx = /^\d{2}-\d{2}-\d{2}$/
+  return regEx.test(str)
+  
+}
+
+function extractNumbers(str) {
+  const regEx = /\d/g;
+  const strings = str.match(regEx)
+  return Number(strings.join(''));
+}
+
+function isProfessionalEmail(str) {
+  const regEx = /x$/ig
+  console.log(str.match(regEx))
+  if (regEx.test(str)) {
+    return false
+  } else {return true}
+}
+
+function isProfessionalEmail(str) {
+  const regEx = /[^x]$/ig
+  return regEx.test(str);
+}
+
+function countVowels(str) {
+ const regEx = /[aeiou]/ig 
+ const vowels = str.match(regEx)
+ if (vowels) {return vowels.length
+ } else {return 0} 
+}
+
+function countVowels(str) {
+ const regEx = /[aeiou]/ig 
+ const vowels = str.match(regEx)
+ return vowels === null ? 0 : vowels.length;
+}
+
+
+
+
+function sumNums(str) {
+  let sum = 0;
+  const consecEx = /\d/g
+  const singleEx = /\d+\d/g
+
+  if (consecEx.test(str)) {
+  for (let i = 0; i < str.length; i++) {
+    const digits = str[i]
+    if (!isNaN(digits)) {sum += Number(digits)}
+  }}
+  if (singleEx.test(str)) {return Number(str.match(singleEx))};
+  if (!singleEx.test(str)) {return 0};
+  
+  return sum; 
+}
+
+function sumNums(str) {
+  const regex = /\d+/g;
+  const matches = str.match(regex)
+  if (matches === null) {return 0}
+  let sum = 0;
+  for (let i = 0; i < matches.length; i++) {
+    sum += Number(matches[i])
+  } return sum; 
+}
+
+function sumNums(str) {
+  const regEx = /\d+/g;
+  const matches = str.match(regEx); 
+
+  if (matches) {return matches.reduce((sum, digit)=> sum += Number(digit), 0)
+  } else {return 0}
+}
+
+
+
+function testValidCountdown(str) {
+  const vowels = /[aeoui]{3,}/g;
+  const nouns = /[^aeoui]{4,}/g;
+if (vowels.test(str) && nouns.test(str) && str.length === 9) {
+  return true
+} else {return false}
+}
+
+function testValidCountdown(str) {
+  const vowelsAndNouns = /[aeoui]{3,}[^aeoui]{4,}/;
+  const strLength9 = str.length === 9;
+  return vowelsAndNouns.test(str) && strLength9
+}
+
+
