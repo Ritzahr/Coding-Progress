@@ -1,0 +1,29 @@
+//Study Time: 133 minutes. 
+//Focused on completing the Regular Expression challenges. 
+// Examples of code I wrote today: 
+
+function testExact2ConsecutiveLs(str) {
+  const regex = /l+/g
+  const test = str.match(regex)
+  return test[0] === 'll';
+}
+
+function validatePin(str) {
+  const regex = /^\d{4,6}$/;
+  return regex.test(str)
+}
+
+function spotTheContraction(str) {
+  const regex = /\w+\'\w+/g
+  return regex.test(str);
+}
+
+function excludeWords(str) {
+  const regex1 = /^north$/gi;
+  const regex2 = /^coders$/gi;
+  const words = str.split(' ');
+  const filtered = words.filter((item) => !regex1.test(item) && !regex2.test(item))
+  return filtered.join(' ')
+
+}
+
