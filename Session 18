@@ -1,0 +1,41 @@
+//Study Time: 111 minutes.
+//Brushed up on HTML further, exlored the DOM and wrote some text alongside it, completed a Code Wars Kata. 
+//Examples of code I wrote today: 
+
+function dnaStrand(dna){
+  const dnaPairs = dna.split('');
+  const compDna = []; 
+  
+  for (let i = 0; i < dnaPairs.length; i++) {
+    const strand = dnaPairs[i]
+    if (strand === 'A') compDna.push('T');
+    if (strand === 'T') compDna.push('A');
+    if (strand === 'G') compDna.push('C');
+    if (strand === 'C') compDna.push('G');
+  }
+  return compDna.join('');
+}
+
+
+<div class = "main-body">
+  <h1> Article Title </h1>
+  <p>Some text within the article</p>
+  <p>Some more text</p>
+  <ul title = 'List'>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+  </ul>
+  <div class='Footer'> 
+    <p>Notes created by Dwayne. </p></div> 
+</div>
+const elementNode = document.createElement('p'); 
+const attributeNode = document.createAttribute('class'); 
+const contentNode = document.createTextNode('A new added item!'); 
+
+elementNode.appendChild(contentNode);
+attributeNode.value = 'temporary node';
+elementNode.setAttributeNode(attributeNode);
+document.body.appendChild(elementNode);
+console.log(elementNode);
