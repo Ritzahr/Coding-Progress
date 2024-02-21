@@ -1,0 +1,26 @@
+//Study Time: 92 minutes.
+//Have kept studying throughout the last week, just never uploaded, because of time constraints, but managed to complete a challenge webpage, will I upload shortly. 
+//Examples of code, I wrote today: 
+
+function openOrSenior(data){
+  const output = [];
+for (let i = 0; i < data.length; i++) {
+  const member = data[i];
+  const age = member[0]; 
+  const handicap = member[1];
+  
+  if (age >= 55 && handicap > 7 ) {
+    output.push('Senior')
+  } else (output.push('Open'));
+}
+  return output; 
+}
+
+function openOrSenior(data){
+  const output = [];
+for (let i = 0; i < data.length; i++) {
+  const [age, handicap] = data[i];
+  age >= 55 && handicap > 7 ? output.push('Senior') : output.push('Open');
+}
+  return output; 
+}
