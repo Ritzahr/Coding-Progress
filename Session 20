@@ -1,0 +1,33 @@
+//Study Time: 63 minutes.
+//Did some JS challenges on Code Wars.
+//Examples of code I wrote.
+
+function disemvowel(str) {
+  const regEx = /[aeiou]/gi
+  return str.replace(regEx, '');
+}
+
+function duplicateCount(text){
+  const characters = text.toUpperCase().split('');
+  const counter = {};
+  let duplicates = 0;
+  for (let i = 0; i < characters.length; i++) {
+    const char = characters[i];
+    counter[char] = (counter[char] || 0) + 1 }
+  for (const char in counter) {
+    if (counter[char] > 1) { duplicates++ }
+  }
+  return duplicates;
+}
+
+function getGrade (s1, s2, s3) {
+  const mean = s1+s2+s3; 
+  const result = Math.round(mean/3);
+  let letter = ''; 
+  if (result > 89) {letter = 'A';
+                    } else if (result < 90 && result >= 80) {letter = "B"
+                    } else if (result < 80 && result >= 70) {letter ='C'
+                    } else if (result < 70 && result >= 60) {letter = 'D'
+                    } else if (result < 60) {letter = 'F'};
+  return letter
+}
