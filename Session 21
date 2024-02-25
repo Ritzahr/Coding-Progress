@@ -1,0 +1,16 @@
+//Study time: 23 minutes.
+//Did a quick challenge today to start building up some momentum again. 
+//Code i wrote: 
+
+function makeSentence(parts) {
+ const word = [];
+ let result = [];
+  
+  parts.forEach((x) => {
+    if (x.match(/[a-z]/gi)){word.push(x)};
+    if (x.match(/\,/)) {word.push(x)}
+    if (x.match(/\d/)) {word.push(x)}
+  });
+  const final = word.join(' ') + '.';
+  return final.replaceAll(' ,', ',');
+}
