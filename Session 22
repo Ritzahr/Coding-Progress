@@ -1,0 +1,48 @@
+//Study Time: 95 minutes. 
+//Did some Javascript challenges, then worked on a rock,paper, scissors minigame using html and Javscript. 
+//Some examples of code I wrote today: 
+function highAndLow(numbers){
+const digits = numbers.split(' ');
+  digits.sort((a,b) => a-b);
+  return `${digits[digits.length-1]} ${digits[0]}`
+}
+function persistence(num) {
+  console.log(num);
+  let counter =[];
+  
+  const digits = num.toString().split('');
+  const result = digits.reduce((accumulator, digit) => {
+    return accumulator * digit
+  }, 1)
+   counter.push(result)
+  
+  return counter.length; 
+}
+
+//When player presses, 'Yes'.
+function startGame() {
+const main = document.querySelector('.main-body')
+const menu = document.createElement('ul');
+
+if (main.children.length > 3 && main.children[3].innerHTML !== 'Game ended!') {window.alert('Nah you pick')} 
+if (main.children.length <= 3 || main.children[3].innerHTML === 'Game ended!') 
+{const rock = document.createElement('button')
+rock.textContent = 'Rock'
+const paper = document.createElement('button');
+paper.textContent = 'Paper';
+const scissors = document.createElement('button');
+scissors.textContent = 'Scissors';
+
+menu.append(rock, paper, scissors);
+main.appendChild(menu);
+}}
+
+//When player presses, 'No'.
+function gameEnd () {
+
+const child = document.querySelector('.main-body').children[3];
+if (!child){ window.alert('That\'s unfortunate, maybe next time!')}
+else if (child.innerHTML === 'Game ended!') {
+    window.alert('You ended the game already, press \'Yes\' to start over!')
+} else {child.innerHTML = 'Game ended!'}
+}
